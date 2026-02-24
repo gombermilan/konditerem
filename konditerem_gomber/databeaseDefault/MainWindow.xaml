@@ -1,0 +1,36 @@
+﻿<Window x:Class="databeaseDefault.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Konditerem Kezelő" Height="450" Width="700">
+    <TabControl x:Name="tcMenu" SelectionChanged="tcMenu_SelectionChanged">
+
+        <TabItem Header="Tagok">
+            <DataGrid x:Name="dgTagok" AutoGenerateColumns="True" IsReadOnly="True" Margin="10"/>
+        </TabItem>
+
+        <TabItem Header="Belépések">
+            <DataGrid x:Name="dgBelepesek" AutoGenerateColumns="True" IsReadOnly="True" Margin="10"/>
+        </TabItem>
+
+        <TabItem Header="Statisztika">
+            <DataGrid x:Name="dgStatisztika" AutoGenerateColumns="True" IsReadOnly="True" Margin="10"/>
+        </TabItem>
+
+        <TabItem Header="Új tag felvétele">
+            <StackPanel Margin="50" Width="300">
+                <Label Content="Név:"/>
+                <TextBox x:Name="txtUjNev" Margin="0,0,0,10"/>
+                <Label Content="Születési év:"/>
+                <DatePicker x:Name="dpSzuletes" Margin="0,0,0,10"/>
+                <Label Content="Bérlet típus:"/>
+                <ComboBox x:Name="cbBerlet" Margin="0,0,0,20">
+                    <ComboBoxItem Content="Napi"/>
+                    <ComboBoxItem Content="Havi"/>
+                    <ComboBoxItem Content="Éves"/>
+                </ComboBox>
+                <Button Content="Mentés" Click="Button_Click" Height="30" Background="LightGreen"/>
+            </StackPanel>
+        </TabItem>
+
+    </TabControl>
+</Window>
