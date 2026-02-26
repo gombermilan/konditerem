@@ -71,7 +71,13 @@ namespace databeaseDefault
             else
                 try
                 {
-                    
+                    DateTime? dob = dpSzuletes.SelectedDate;
+                    db.NewCustomer(new Customer { Name = txtUjNev.Text, DOBYear =  dob.Value.Year, LeaseType = cbBerlet.Text});
+                    txtUjNev.Clear();
+                    dpSzuletes.SelectedDate = null;
+                    cbBerlet.SelectedIndex = 0;
+                    MessageBox.Show("Tag sikeresen felvéve!");
+                    tcMenu.SelectedIndex = 0;
                 }
                 catch (Exception ex)
                 {

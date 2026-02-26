@@ -95,7 +95,7 @@ namespace databeaseDefault
             using (MySqlConnection conn = new MySqlConnection(ConnectionString))
             {
                 conn.Open();
-                string sql = "INSERT INTO `tagok`(`nev`, `szuletesi_ev`, `berlet_tipus`) VALUES (@name, @DOBYear, LeaseType)";
+                string sql = "INSERT INTO `tagok`(nev, szuletesi_ev, berlet_tipus) VALUES (@name, @DOBYear, @LeaseType)";
                 using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@name", New.Name);
